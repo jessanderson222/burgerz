@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
-import BurgerItem from './BurgerItem'
+import React, { Component } from "react";
+import BurgerItem from "./BurgerItem";
 
-const BurgerList = (props) => {
-  return (
-    <div className="BurgerList">
-      { /* Render Burger Items Here*/ }
-    </div>
-  )
-}
+const BurgerList = props => {
+  let burgers = props.burgers.map((burger, i) => (
+    <BurgerItem
+      key={i}
+      burger={burger}
+      showHandleClick={props.showHandleClick}
+    />
+  ));
 
-export default BurgerList
+  return <div className="BurgerList">{burgers}</div>;
+};
+
+export default BurgerList;

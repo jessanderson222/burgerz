@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-const BurgerDisplay = (props) => {
+const BurgerDisplay = props => {
+  console.log(props);
   return (
     <div className="BurgerDisplay">
-      <img src={"" /* Insert burger Image URL here */}/>
-      <br/>
-      <h1>Insert Burger Name Here</h1>
-      <br/>
-      <select onChange={console.log}>
+      <img src={props.burger.imgURL} />
+      <br />
+      <h1>{props.burger.name}</h1>
+      <br />
+      <select onChange={console.log} value={props.burger.category}>
         <option value="Relatable">Relatable</option>
         <option value="Bougie">Bougie</option>
       </select>
     </div>
-  )
-}
+  );
+};
 
-export default BurgerDisplay
+export default BurgerDisplay;
